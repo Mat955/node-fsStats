@@ -12,19 +12,23 @@ fs.stat('./kot.jpg', function (err, stats) {
 fs.readFile('./text.txt', 'utf-8', function (err, data) {
     console.log('Data before saving'.blue);
     console.log(data);
-    fs.readdir('./save.txt', 'utf-8', function (err, data) {
-        console.log('Create new file to saving data!'.green);
-    });
-    fs.appendFile('./save.txt', 'Thats looks like after saving\n', function (err) {
+    fs.appendFile('./text.txt', '\nThats looks like after saving', function (err) {
         if (err) throw err;
         console.log('Saved!'.blue);
-        fs.readFile('./save.txt', 'utf-8', function (err, data) {
+        fs.readFile('./text.txt', 'utf-8', function (err, data) {
             console.log('Data after saving'.red);
             console.log(data);
         });
     });
 });
 
+fs.readdir('.', function (err, files) {
+    if(err) throw err;
+    fs.writeFile('./save.txt', files, function (err){
+        if(err) throw err;
+        console.log('Saved'.green);
+    });
+});
 
 
 

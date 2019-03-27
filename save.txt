@@ -1,3 +1,1 @@
-Thats looks like after saving
-Thats looks like after saving
-Thats looks like after saving
+.git,.gitignore,index.js,kot.jpg,node_modules,package-lock.json,package.json,README.md,save.txt,text.txt
